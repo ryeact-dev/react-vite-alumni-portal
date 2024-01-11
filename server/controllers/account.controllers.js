@@ -13,6 +13,8 @@ async function loginUser(req, res, next) {
       [email.toLowerCase()]
     );
 
+    console.log(email);
+
     if (!userData.rows.length)
       return res.status(404).send('User email does not exist!');
 

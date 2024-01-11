@@ -31,18 +31,6 @@ app.use(
 
 app.use('/api/account', accountRoute);
 
-async function getPostgresVersion() {
-  const client = await pool.connect();
-  try {
-    const response = await client.query('SELECT version()');
-    console.log(response.rows[0]);
-  } finally {
-    client.release();
-  }
-}
-
-getPostgresVersion();
-
 // Error handler
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
