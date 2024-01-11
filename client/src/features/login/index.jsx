@@ -1,4 +1,25 @@
+import { onLoginUser } from '@/api/account.api';
+import { INITIAL_LOGIN_DATA } from '@/globals/initialValues';
+import { useMutation } from '@tanstack/react-query';
+import { useFormik } from 'formik';
+import { useState } from 'react';
+
 export default function Login() {
+  const onLoginMutation = useMutation({
+    mutationFn: onLoginUser,
+    onSuccess: (data) => {
+      console.log(data);
+    },
+  });
+
+  const formikLogin = useFormik({
+    initialValues: INITIAL_LOGIN_DATA,
+    onSubmit: (data) => {
+      console.log(data);
+    },
+  });
+
+  // RENDER HTML SECTION
   return (
     <section className='mx-3 flex min-h-screen flex-col items-center justify-center sm:mx-auto sm:max-w-full'>
       <article className='card w-96 bg-base-100 shadow-xl rounded-lg'>
