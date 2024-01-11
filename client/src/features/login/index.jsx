@@ -5,12 +5,16 @@ import { loginSchema } from '@/schemas/account.schema';
 import { useMutation } from '@tanstack/react-query';
 import { useFormik } from 'formik';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const onLoginMutation = useMutation({
     mutationFn: onLoginUser,
     onSuccess: (data) => {
       console.log(data);
+      navigate('/');
     },
   });
 

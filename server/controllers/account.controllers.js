@@ -1,43 +1,36 @@
 const pool = require('../config/db.config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const { errorHandler } = require('../utils/error');
 
 const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtSecret = process.env.JWTSECRET;
 
 async function loginUser(req, res, next) {
   const { email, password } = req.body;
+
   try {
     const userData = await pool.query(
-      'SELECT user_password, user_id FROM users WHERE user_email = $1',
-      [email.toLowerCase()]
+      'SELECT * FROM users WHERE user_email = $1',
+      [email]
     );
-
-    console.log(email);
 
     if (!userData.rows.length)
       return res.status(404).send('User email does not exist!');
 
-    if (userData) {
-      const passOk = bcrypt.compareSync(
-        password,
-        userData.rows[0].user_password
-      );
-
+    if (password === userData.rows[0].user_password) {
       const user_id = userData.rows[0].user_id;
 
-      if (passOk) {
-        const token = jwt.sign({ user_id }, jwtSecret, {});
-        const { user_password, ...user } = userData.rows[0];
+      const token = jwt.sign({ user_id }, jwtSecret, {});
+      const { user_password, user_email, ...user } = userData.rows[0];
 
-        res.cookie('auth_token', token);
-        res.status(200).json(user);
-      } else {
-        res.status(401).send('Wrong Password');
-      }
+      res.cookie('auth_token', token);
+      res.status(200).json(user);
+    } else {
+      res.status(401).send('Wrong Password');
     }
   } catch (err) {
-    console.error('login error :: ', err);
+    next(errorHandler(500, err.stack));
   }
 }
 exports.loginUser = loginUser;

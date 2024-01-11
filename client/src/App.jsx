@@ -4,6 +4,7 @@ import {
   Navigate,
   RouterProvider,
 } from 'react-router-dom';
+import Layout from './containers/Layout';
 import LoginPage from './pages/Login';
 import initializeApp from './setup/init';
 
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <LoginPage />,
+  },
+  {
+    path: '/',
+    element: <Layout />,
   },
 ]);
 
