@@ -8,7 +8,7 @@
 //   password: process.env.PASSWORD,
 //   host: process.env.HOST,
 //   port: process.env.DBPORT,
-//   database: 'alumni_portal',
+//   database: 'postgres',
 // });
 
 // module.exports = pool;
