@@ -13,14 +13,14 @@ const NAV_LINKS = [
   },
   {
     label: 'Members',
-    path: 'members',
+    path: '/members',
     icon: (
       <FaUsers className='mr-2 h-[22px] w-[22px] md:mr-1 md:h-[18px] md:w-[18px]' />
     ),
   },
   {
     label: 'Account',
-    path: 'account',
+    path: '/account',
     icon: (
       <FaUserCircle className='mr-2 h-[22px] w-[22px] md:mr-1 md:h-[18px] md:w-[18px]' />
     ),
