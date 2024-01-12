@@ -1,8 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import { FaSearch } from 'react-icons/fa';
-import { btnLiftEffect } from '@/globals/initialValues';
-
 export default function HeroSection() {
   return (
     <>
@@ -21,7 +18,7 @@ export default function HeroSection() {
             <button className={`btn btn-primary rounded-full px-8 mt-20`}>
               <Link
                 to='/members'
-                className='flex items-center justify-center text-lg text-white'
+                className='flex items-center justify-center text-lg font-extrabold'
               >
                 Join Now
               </Link>

@@ -2,7 +2,7 @@ import NavList from './components/NavList';
 
 export default function Header() {
   return (
-    <header className='bg-base-100 sticky top-0'>
+    <header className='bg-base-100 sticky top-0 z-50'>
       <div className='navbar p-0 justify-between items-center max-w-6xl mx-auto'>
         <div>
           <a className='btn bg-transparent border-0 text-lg'>Alumni Portal</a>
