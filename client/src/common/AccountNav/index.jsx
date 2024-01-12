@@ -11,7 +11,7 @@ export default function AccountNav() {
   }
 
   function linkClasses(type = null) {
-    let classes = `inline-flex gap-1 rounded-full px-12 items-center btn text-white`;
+    let classes = `inline-flex gap-1 rounded-full px-8 items-center btn text-white btn-sm w-full max-w-40`;
     if (type === subpage) {
       classes += ' btn-primary';
     } else {
@@ -21,7 +21,7 @@ export default function AccountNav() {
   }
 
   return (
-    <nav className='mx-auto mb-4 my-2 justify-center gap-6 text-center sm:flex sm:max-w-lg sm:flex-row '>
+    <nav className='mx-auto mb-6 justify-center gap-6 text-center sm:flex sm:max-w-lg sm:flex-row '>
       <Link className={linkClasses('')} to={'/account'}>
         <FaUser size={18} />
         My profile
@@ -30,10 +30,10 @@ export default function AccountNav() {
         <FaClipboardList size={18} />
         My Posts
       </Link>
-      <Link className={linkClasses('users')} to={'/account/users'}>
+      {/* <Link className={linkClasses('users')} to={'/account/users'}>
         <FaUsers size={18} />
         Members
-      </Link>
+      </Link> */}
     </nav>
   );
 }

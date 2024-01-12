@@ -32,7 +32,7 @@ export default function NavList() {
     'flex font-normal items-center m-1 text-base lg:text-sm hover:text-primary ';
 
   return (
-    <ul className='my-4 flex flex-col gap-1 md:ml-11 md:flex-row md:items-center lg:mb-0 lg:mt-0 lg:gap-4'>
+    <ul className='my-4 flex flex-row gap-6 justify-center items-center'>
       {NAV_LINKS.map((link, index) => (
         <li key={index}>
           <NavLink

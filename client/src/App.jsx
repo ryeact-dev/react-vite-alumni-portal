@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import Layout from './containers/Layout';
+import AccountProfile from './features/account/profile';
 import LoginPage from './pages/Login';
 import AccountPage from './pages/protected/AccountPage';
 import HomePage from './pages/protected/Home';
@@ -22,7 +23,16 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: '/account', element: <AccountPage /> },
+      {
+        path: '/account',
+        element: <AccountPage />,
+        children: [
+          {
+            index: true,
+            element: <AccountProfile />,
+          },
+        ],
+      },
     ],
   },
 ]);

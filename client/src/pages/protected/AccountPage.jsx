@@ -1,5 +1,11 @@
-import Account from '@/features/account';
+import AccountNav from '@/common/AccountNav';
+import { Outlet } from 'react-router-dom';
 
 export default function AccountPage() {
-  return <Account />;
+  return (
+    <section>
+      <AccountNav />
+      <Outlet />
+    </section>
+  );
 }
