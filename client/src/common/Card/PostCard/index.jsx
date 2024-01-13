@@ -1,10 +1,11 @@
+import Image from '@/common/Image';
 import { Link } from 'react-router-dom';
 
 export default function PostCard({ post }) {
   const { coverPhotoURL, photoURL, title, body, date } = post;
   return (
     <Link className='w-90 bg-base-100 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-105'>
-      <img src={coverPhotoURL} alt='' />
+      <Image src={coverPhotoURL} alt='' />
       <div className='flex flex-col my-6 px-4'>
         {/* <img
           className='w-10 h-10 rounded-full ml-2 object-cover object-center'

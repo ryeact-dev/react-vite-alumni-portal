@@ -3,15 +3,16 @@ import { FaCamera } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import ProfileData from './components/ProfileData';
 import { ACCOUNT_PROFILE } from '@/data/dummyData';
+import Image from '@/common/Image';
 
 export default function AccountProfile({ email, onHandleOpen }) {
   return (
     <article className='mx-auto max-w-6xl rounded-xl bg-base-200 border-2 border-base-100  px-2 pb-8 sm:px-0 '>
       <div className='max-h-full pt-4 text-2xl sm:flex sm:p-6 sm:text-left '>
-        <figure className='flex items-center w-full rounded-lg bg-base-100 px-2 sm:my-0 sm:h-80 sm:w-80 sm:px-0'>
-          <img
+        <figure className='flex items-center w-full rounded-lg bg-base-100 overflow-hidden px-2 sm:my-0 sm:h-80 sm:w-80 sm:px-0'>
+          <Image
             src={ACCOUNT_PROFILE.photoURL}
-            className='rounded-2xl object-cover shadow-2xl sm:h-80 sm:w-80'
+            className='rounded-2xl object-cover shadow-2xl w-full h-full'
           />
         </figure>
         <ProfileData ACCOUNT_PROFILE={ACCOUNT_PROFILE} />

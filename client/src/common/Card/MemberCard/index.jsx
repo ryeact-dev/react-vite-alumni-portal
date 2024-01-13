@@ -1,3 +1,4 @@
+import Image from '@/common/Image';
 import React from 'react';
 
 export default function MemberCard({ member }) {
@@ -5,13 +6,15 @@ export default function MemberCard({ member }) {
 
   return (
     <div className='card w-64 bg-base-100 shadow-xl'>
-      <figure className='px-10 pt-6'>
-        <img
-          src={photoURL}
-          alt='Shoes'
-          className='rounded-full h-40 w-40 object-cover'
-        />
-      </figure>
+      <div className='mx-auto pt-6'>
+        <figure className='h-40 w-40 rounded-full border-4 border-base-200'>
+          <Image
+            src={photoURL}
+            alt='Shoes'
+            className=' w-full h-full object-cover'
+          />
+        </figure>
+      </div>
       <div className='card-body items-center text-center'>
         <h2 className='card-title -mb-2'>{name}</h2>
         <p>Graduated: {yearGraduated}</p>
