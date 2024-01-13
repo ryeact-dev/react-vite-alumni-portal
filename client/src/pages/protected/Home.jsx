@@ -9,12 +9,16 @@ export default function HomePage() {
       <HeroSection />
       <div className='my-6 flex justify-between items-center'>
         <h2 className='text-2xl'>Recent Posts</h2>
-        <button className='btn btn-primary font-bold'>See all posts</button>
+        <Link to='/posts' className='btn btn-primary font-bold'>
+          See all posts
+        </Link>
       </div>
       <AllPosts />
       <div className='my-6 flex justify-between items-center'>
         <h2 className='text-2xl'>Recent New Members</h2>
-        <button className='btn btn-primary font-bold'>See all members</button>
+        <Link to='/members' className='btn btn-primary font-bold'>
+          See all members
+        </Link>
       </div>
       <Members />
       <article className='mt-12 bg-base-200 rounded-xl border-2 border-base-100 p-16 flex flex-col items-center'>

@@ -3,19 +3,15 @@ import Layout from './containers/Layout';
 import AccountPost from './features/account/Post';
 import AccountProfile from './features/account/profile';
 import AllMembers from './features/allmembers';
-import SinglePost from './features/post';
-import LoginPage from './pages/Login';
+import SinglePost from './features/post/SinglePost';
 import AccountPage from './pages/protected/AccountPage';
+import AllPostsPage from './pages/protected/AllPostsPage';
 import HomePage from './pages/protected/Home';
 import initializeApp from './setup/init';
 
 initializeApp();
 
 const router = createBrowserRouter([
-  {
-    path: '/login',
-    element: <LoginPage />,
-  },
   {
     path: '/',
     element: <Layout />,
@@ -36,6 +32,7 @@ const router = createBrowserRouter([
           },
         ],
       },
+      { path: 'posts', element: <AllPostsPage /> },
       { path: 'post/:postId', element: <SinglePost /> },
     ],
   },
