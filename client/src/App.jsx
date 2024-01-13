@@ -1,12 +1,9 @@
-import { useEffect, useState } from 'react';
-import {
-  createBrowserRouter,
-  Navigate,
-  RouterProvider,
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './containers/Layout';
+import AccountPost from './features/account/Post';
 import AccountProfile from './features/account/profile';
 import AllMembers from './features/allmembers';
+import SinglePost from './features/post';
 import LoginPage from './pages/Login';
 import AccountPage from './pages/protected/AccountPage';
 import HomePage from './pages/protected/Home';
@@ -24,17 +21,22 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: '/members', element: <AllMembers /> },
+      { path: 'members', element: <AllMembers /> },
       {
-        path: '/account',
+        path: 'account',
         element: <AccountPage />,
         children: [
           {
             index: true,
             element: <AccountProfile />,
           },
+          {
+            path: 'posts',
+            element: <AccountPost />,
+          },
         ],
       },
+      { path: 'post/:postId', element: <SinglePost /> },
     ],
   },
 ]);

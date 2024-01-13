@@ -1,10 +1,19 @@
 import Image from '@/common/Image';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function PostCard({ post }) {
-  const { coverPhotoURL, photoURL, title, body, date } = post;
+  const { id, coverPhotoURL, photoURL, title, body, date } = post;
+
+  const navigate = useNavigate();
+  const handeClick = () => {
+    navigate(`/post/${id}`, { state: post });
+  };
+
   return (
-    <Link className='w-90 bg-base-100 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-105'>
+    <div
+      onClick={handeClick}
+      className='w-90 bg-base-100 cursor-pointer rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-105'
+    >
       <Image src={coverPhotoURL} alt='' />
       <div className='flex flex-col my-6 px-4'>
         {/* <img
@@ -20,6 +29,6 @@ export default function PostCard({ post }) {
           .toString()
           .slice(0, 100)}...`}</p>
       </div>
-    </Link>
+    </div>
   );
 }
