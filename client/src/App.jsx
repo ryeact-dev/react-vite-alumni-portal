@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Layout from './containers/Layout';
 import AccountProfile from './features/account/profile';
+import AllMembers from './features/allmembers';
 import LoginPage from './pages/Login';
 import AccountPage from './pages/protected/AccountPage';
 import HomePage from './pages/protected/Home';
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: '/members', element: <AllMembers /> },
       {
         path: '/account',
         element: <AccountPage />,
