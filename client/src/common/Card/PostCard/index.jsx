@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export default function Card({ post }) {
+export default function PostCard({ post }) {
   const { coverPhotoURL, photoURL, title, body, date } = post;
   return (
     <Link className='w-90 bg-base-100 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-105'>
