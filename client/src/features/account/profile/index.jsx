@@ -7,7 +7,7 @@ import Image from '@/common/Image';
 
 export default function AccountProfile({ email, onHandleOpen }) {
   return (
-    <article className='mx-auto max-w-6xl rounded-xl bg-base-200 border-2 border-base-100  px-2 pb-8 sm:px-0 '>
+    <article className='mx-auto max-w-6xl rounded-xl bg-base-200 border-2 border-base-100 px-2 pb-8 sm:px-0 '>
       <div className='max-h-full pt-4 text-2xl sm:flex sm:p-6 sm:text-left '>
         <figure className='flex items-center w-full rounded-lg bg-base-100 overflow-hidden px-2 sm:my-0 sm:h-80 sm:w-80 sm:px-0'>
           <Image

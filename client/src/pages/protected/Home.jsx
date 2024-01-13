@@ -17,7 +17,7 @@ export default function HomePage() {
         <button className='btn btn-primary font-bold'>See all members</button>
       </div>
       <Members />
-      <article className='my-12 bg-base-200 rounded-xl border-2 border-base-100 p-16 flex flex-col items-center'>
+      <article className='mt-12 bg-base-200 rounded-xl border-2 border-base-100 p-16 flex flex-col items-center'>
         <div className='max-w-xl text-center'>
           <h1 className='pb-1 text-3xl font-bold leading-8 text-primary lg:text-5xl xl:text-6xl'>
             Join the community, and change the future

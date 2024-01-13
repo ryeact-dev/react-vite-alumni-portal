@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 export default function HeroSection() {
   return (
     <>
-      <section className='w-full grid grid-cols-3 gap-6'>
-        <article className='col-span-2 bg-base-200 rounded-xl border-2 border-base-100 p-16 flex flex-col'>
+      <section className='w-full flex flex-col-reverse sm:grid sm:grid-cols-3 gap-6'>
+        <article className='sm:col-span-2 bg-base-200 rounded-xl border-2 border-base-100 p-4 sm:p-16 flex flex-col'>
           <div>
             <h1 className='pb-1 text-3xl font-bold leading-8 text-primary lg:text-5xl xl:text-6xl'>
               Join the community, and change the future
@@ -15,10 +15,10 @@ export default function HeroSection() {
               <span className='font-bold text-accent'>Alma Mater</span>
             </h2>
           </div>
-          <div>
+          <div className='sm:max-w-xs'>
             <Link
               to='/members'
-              className='btn btn-accent rounded-full px-10 mt-20 text-lg font-extrabold text-white'
+              className='btn btn-accent rounded-full w-full mt-20 text-lg font-extrabold text-white'
             >
               Join Now
             </Link>
@@ -31,7 +31,7 @@ export default function HeroSection() {
           />
         </article>
       </section>
-      <section className='w-full grid grid-cols-3 gap-6 mt-6'>
+      <section className='w-full sm:grid sm:grid-cols-3 gap-6 mt-6'>
         <article className='bg-base-200 rounded-xl border-2 border-base-100 flex flex-col relative'>
           <div className='group relative overflow-hidden bg-base-200 px-6 pt-10 pb-8 shadow-xl transition-all duration-300  hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10'>
             <span className='absolute top-[-50px] left-[-100px] z-0 h-20 w-20 rounded-full bg-accent transition-all duration-300 group-hover:scale-[12]'></span>
@@ -52,7 +52,7 @@ export default function HeroSection() {
             </div>
           </div>
         </article>
-        <article className='bg-base-200 rounded-xl border-2 border-base-100 flex flex-col relative'>
+        <article className='bg-base-200 rounded-xl border-2 border-base-100 flex flex-col relative my-6 sm:my-0'>
           <div className='group relative overflow-hidden bg-base-200 px-6 pt-10 pb-8 shadow-xl transition-all duration-300  hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10'>
             <span className='absolute top-[-50px] left-[-100px] z-0 h-20 w-20 rounded-full bg-primary transition-all duration-300 group-hover:scale-[12]'></span>
             <div className='relative z-10 mx-auto max-w-md'>

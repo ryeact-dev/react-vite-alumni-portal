@@ -10,9 +10,9 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className='w-full text-slate-400 bg-base-100'>
+    <footer className='w-full text-slate-400 bg-base-100 mt-12'>
       <article className=' py-4 max-w-6xl mx-auto'>
-        <div className='grid grid-cols-3 my-8'>
+        <div className='sm:grid sm:grid-cols-3 my-8'>
           <div className='px-4 w-ful'>
             <h2 className='text-2xl font-semibold mb-8'>Alumni Portal</h2>
             <p className='text-justify'>
@@ -22,7 +22,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className='px-4 w-full'>
+          <div className='px-4 w-full my-8 sm:my-0'>
             <h2 className='inline-block text-2xl pb-4 mb-2 border-b-4 border-secondary w-full'>
               Company
             </h2>
